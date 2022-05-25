@@ -5,12 +5,12 @@ USE Bibliotheke
 GO
 
 CREATE TABLE "Bücher"(
-    "id" INT NOT NULL,
+    "id" INT NOT NULL IDENTITY(1,1),
     "titel" NVARCHAR(255) NOT NULL,
     "anzahlSeiten" INT NOT NULL,
     "inStock" INT NOT NULL,
     "erscheinungsdatum" DATE NOT NULL,
-    "altersfreigabe" INT NULL,
+    "altersfreigabe" BIT NULL,
     "bewertung" DECIMAL(8, 2) NULL,
     "fk_GenreId" INT NOT NULL,
     "fk_AutorId" INT NOT NULL,
@@ -19,27 +19,27 @@ CREATE TABLE "Bücher"(
 ALTER TABLE
     "Bücher" ADD CONSTRAINT "bücher_id_primary" PRIMARY KEY("id");
 CREATE TABLE "Autor"(
-    "id" INT NOT NULL,
+    "id" INT NOT NULL IDENTITY(1,1),
     "name" NVARCHAR(255) NOT NULL,
     "jahrgang" DATE NULL
 );
 ALTER TABLE
     "Autor" ADD CONSTRAINT "autor_id_primary" PRIMARY KEY("id");
 CREATE TABLE "Genre"(
-    "id" INT NOT NULL,
+    "id" INT NOT NULL IDENTITY(1,1),
     "name" NVARCHAR(255) NOT NULL
 );
 ALTER TABLE
     "Genre" ADD CONSTRAINT "genre_id_primary" PRIMARY KEY("id");
 CREATE TABLE "Verlag"(
-    "id" INT NOT NULL,
+    "id" INT NOT NULL IDENTITY(1,1),
     "name" NVARCHAR(255) NOT NULL,
     "standort" NVARCHAR(255) NOT NULL
 );
 ALTER TABLE
     "Verlag" ADD CONSTRAINT "verlag_id_primary" PRIMARY KEY("id");
 CREATE TABLE "bestSeller"(
-    "id" INT NOT NULL,
+    "id" INT NOT NULL IDENTITY(1,1),
     "fk_BuchId" INT NOT NULL,
     "verkaufszahl" INT NOT NULL
 );
