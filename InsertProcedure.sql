@@ -13,4 +13,4 @@ Order By Bücher.titel
 END
 GO
 
-Exec sp_showAllBooksByAuthor 'Jane Schulz';
+exec sp_showAllBooksByAuthor 'Hans Christian';

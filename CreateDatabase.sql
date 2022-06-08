@@ -1,3 +1,6 @@
+DROP DATABASE IF EXISTS Bibliotheke
+GO
+
 CREATE DATABASE Bibliotheke
 GO
 
